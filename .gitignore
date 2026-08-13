@@ -1,0 +1,5 @@
+# Full-size masters kept locally, not deployed.
+# index.html references the .webp versions instead.
+assets/logo-*.png
+uploads/*.png
+uploads/SSP-Video1.mp4
