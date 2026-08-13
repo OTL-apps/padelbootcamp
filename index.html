@@ -10,6 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
   [data-hv="blush"]:hover { background: #f0c6be; }
+  .ssp-open:hover { background: #f6f4ec !important; }
+  .ssp-open:focus-visible { outline: 2px solid #a3813f; outline-offset: 2px; }
+  #ssp-modal { border: 0; padding: 0; background: transparent; max-width: 760px; width: calc(100% - 32px); max-height: 90vh; max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; }
+  #ssp-modal video { max-height: 52vh; max-height: 52dvh; }
+  @media (max-width: 560px) {
+    #ssp-modal .ssp-body { padding: 34px 20px 28px !important; }
+    #ssp-modal .ssp-h { font-size: 25px !important; }
+    #ssp-modal video { max-height: 46dvh; }
+  }
+  #ssp-modal::backdrop { background: rgba(10,22,44,0.72); backdrop-filter: blur(3px); }
+  #ssp-modal[open] { animation: sspIn 0.22s ease-out; }
+  @keyframes sspIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .ssp-close:hover { background: rgba(255,255,255,0.18) !important; }
   [data-hv="ghost"]:hover { background: rgba(255,255,255,0.1); }
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #f1eee4; }
@@ -231,13 +244,14 @@
       <div style="background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 28px rgba(60,70,45,0.08); display: flex; flex-direction: column;">
         <div style="background: #8b9878; color: #f4f2e9; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 20px; text-align: center;">Day 1 — Wed 2 Sept</div>
         <div style="padding: 8px 22px 16px;">
-          <div style="padding: 14px 0; border-bottom: 1px solid #ece8da; display: flex; gap: 14px; align-items: center;">
+          <button type="button" class="ssp-open" style="width: 100%; text-align: left; font: inherit; background: transparent; border: 0; border-bottom: 1px solid #ece8da; border-radius: 6px; cursor: pointer; padding: 14px 8px; margin: 0 -8px; display: flex; gap: 14px; align-items: center;">
             <img src="assets/icons/17_vision_eye-sage.svg" alt="" style="width: 30px; height: 30px; flex-shrink: 0;">
             <div>
               <div style="font-family: 'Playfair Display', serif; font-size: 19px; color: #2f352a;">Reaction Lab</div>
               <div style="font-size: 14px; color: #6d745f; margin-top: 3px;">Sharpen reaction time, tracking &amp; decision-making · with SSP Sports Sensory Performance</div>
+              <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #a3813f; font-weight: 500; margin-top: 8px; display: flex; align-items: center; gap: 6px;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; border-radius: 50%; background: #a3813f; color: #ffffff; font-size: 8px; letter-spacing: 0;">&#9654;</span>Meet our Reaction Lab partner</div>
             </div>
-          </div>
+          </button>
           <div style="padding: 14px 0; border-bottom: 1px solid #ece8da; display: flex; gap: 14px; align-items: center;">
             <img src="assets/icons/15_coaching-sage.svg" alt="" style="width: 30px; height: 30px; flex-shrink: 0;">
             <div>
@@ -304,18 +318,6 @@
           <div style="font-size: 14.5px; color: #6b5a56; margin-top: 10px; line-height: 1.6;">Get your official Playtomic level assessed after lunch on both Wednesday and Thursday, with Nic Rajah, Wilson SA. Add it when you book.</div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- SSP VIDEO -->
-  <div style="background: #163568;">
-    <div style="max-width: 1000px; margin: 0 auto; padding: 76px 28px 80px; text-align: center;">
-      <div style="font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: #d8c48a; font-weight: 500;">Meet Our Reaction Lab Partner</div>
-      <div style="font-family: 'Playfair Display', serif; font-size: 38px; color: #f4f2e9; margin-top: 14px; line-height: 1.15;">Inside <span style="font-style: italic; color: #eec2b9;">SSP</span> Sports Sensory Performance</div>
-      <p style="color: #c9d3e4; font-weight: 300; font-size: 16px; line-height: 1.65; margin: 14px auto 34px; max-width: 60ch;">Vision, reaction time and decision-making are trainable. Here's what you'll be working on in the Reaction Lab.</p>
-      <video controls preload="none" playsinline poster="uploads/SSP-Video1-poster.webp" style="width: 100%; max-width: 440px; border-radius: 8px; display: block; margin: 0 auto; background: #0d2246; box-shadow: 0 20px 50px rgba(8,20,44,0.45);">
-        <source src="uploads/SSP-Video1-web.mp4" type="video/mp4">
-      </video>
     </div>
   </div>
 
@@ -437,5 +439,31 @@
     </div>
   </div>
 </div>
+<dialog id="ssp-modal" aria-labelledby="ssp-title">
+  <div class="ssp-body" style="background: #163568; border-radius: 10px; padding: 42px 32px 36px; text-align: center; position: relative; box-shadow: 0 30px 70px rgba(8,20,44,0.5);">
+    <button type="button" class="ssp-close" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255,255,255,0.1); color: #f4f2e9; font-size: 19px; line-height: 1; cursor: pointer;">&times;</button>
+    <div style="font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: #d8c48a; font-weight: 500;">Meet Our Reaction Lab Partner</div>
+    <div id="ssp-title" class="ssp-h" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #f4f2e9; margin-top: 12px; line-height: 1.15;">Inside <span style="font-style: italic; color: #eec2b9;">SSP</span> Sports Sensory Performance</div>
+    <p style="color: #c9d3e4; font-weight: 300; font-size: 15.5px; line-height: 1.65; margin: 12px auto 26px; max-width: 54ch;">Vision, reaction time and decision-making are trainable. Here's what you'll be working on in the Reaction Lab.</p>
+    <video controls preload="none" playsinline poster="uploads/SSP-Video1-poster.webp" style="max-width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #0d2246;">
+      <source src="uploads/SSP-Video1-web.mp4" type="video/mp4">
+    </video>
+    <a href="https://sspvision.co.za" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; color: #d8c48a; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid rgba(216,196,138,0.45); padding-bottom: 3px;">Visit SSP</a>
+  </div>
+</dialog>
+<script>
+(function () {
+  var dlg = document.getElementById('ssp-modal');
+  if (!dlg || !dlg.showModal) return;
+  var vid = dlg.querySelector('video');
+  function close() { dlg.close(); }
+  document.querySelectorAll('.ssp-open').forEach(function (btn) {
+    btn.addEventListener('click', function () { dlg.showModal(); });
+  });
+  dlg.querySelector('.ssp-close').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+  dlg.addEventListener('close', function () { if (vid) { vid.pause(); vid.currentTime = 0; } });
+})();
+</script>
 </body>
 </html>
