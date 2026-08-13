@@ -14,19 +14,20 @@
   .zone-open:focus-visible { outline: 2px solid #a3813f; outline-offset: 2px; }
   .zone-open .row-chev { transition: transform 0.18s ease, background 0.18s ease; }
   .zone-open:hover .row-chev { transform: translateX(3px); background: #a3813f; color: #ffffff; }
-  #ssp-modal, #coach-modal, #prime-modal { border: 0; padding: 0; background: transparent; max-width: 760px; width: calc(100% - 32px); max-height: 90vh; max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; }
+  #ssp-modal, #coach-modal, #prime-modal, #grids-modal { border: 0; padding: 0; background: transparent; max-width: 760px; width: calc(100% - 32px); max-height: 90vh; max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; }
   #ssp-modal video { max-height: 52vh; max-height: 52dvh; }
   #prime-modal video { max-height: 56vh; max-height: 56dvh; }
-  @media (max-width: 560px) { #prime-modal video { max-height: 50dvh; } }
-  #ssp-modal::backdrop, #coach-modal::backdrop, #prime-modal::backdrop { background: rgba(38,46,30,0.7); backdrop-filter: blur(3px); }
-  #ssp-modal[open], #coach-modal[open], #prime-modal[open] { animation: sspIn 0.22s ease-out; }
+  #grids-modal video { max-height: 56vh; max-height: 56dvh; }
+  @media (max-width: 560px) { #prime-modal video, #grids-modal video { max-height: 50dvh; } }
+  #ssp-modal::backdrop, #coach-modal::backdrop, #prime-modal::backdrop, #grids-modal::backdrop { background: rgba(38,46,30,0.7); backdrop-filter: blur(3px); }
+  #ssp-modal[open], #coach-modal[open], #prime-modal[open], #grids-modal[open] { animation: sspIn 0.22s ease-out; }
   .coach-grid { display: grid; grid-template-columns: 240px 1fr; gap: 26px; align-items: start; text-align: left; margin-top: 20px; }
   @media (max-width: 700px) {
     .coach-grid { grid-template-columns: 1fr !important; gap: 18px !important; justify-items: center; }
     .coach-grid img { max-width: 230px; }
   }
   @media (max-width: 560px) {
-    #ssp-modal .ssp-body, #coach-modal .ssp-body, #prime-modal .ssp-body { padding: 34px 20px 28px !important; }
+    #ssp-modal .ssp-body, #coach-modal .ssp-body, #prime-modal .ssp-body, #grids-modal .ssp-body { padding: 34px 20px 28px !important; }
     #ssp-modal .ssp-h { width: 260px !important; margin: 18px auto 2px !important; }
     #ssp-modal video { max-height: 46dvh; }
   }
@@ -269,13 +270,14 @@
             </div>
             <span class="row-chev" aria-hidden="true" style="margin-left: auto; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #f1eee4; color: #a3813f; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; line-height: 1;">&#8250;</span>
           </button>
-          <div style="padding: 14px 0; border-bottom: 1px solid #ece8da; display: flex; gap: 14px; align-items: center;">
+          <button type="button" class="zone-open" data-modal="grids-modal" aria-label="Watch: understanding grids" style="width: 100%; text-align: left; font: inherit; background: transparent; border: 0; border-bottom: 1px solid #ece8da; border-radius: 6px; cursor: pointer; padding: 14px 8px; margin: 0 -8px; display: flex; gap: 14px; align-items: center;">
             <img src="assets/icons/16_grid-sage.svg" alt="" style="width: 30px; height: 30px; flex-shrink: 0;">
             <div>
               <div style="font-family: 'Playfair Display', serif; font-size: 19px; color: #2f352a;">Grids</div>
               <div style="font-size: 14px; color: #6d745f; margin-top: 3px;">Agility grids: footwork games that sharpen court movement · with Ben Padel</div>
             </div>
-          </div>
+            <span class="row-chev" aria-hidden="true" style="margin-left: auto; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #f1eee4; color: #a3813f; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; line-height: 1;">&#8250;</span>
+          </button>
         </div>
       </div>
       <div style="background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 28px rgba(60,70,45,0.08); display: flex; flex-direction: column;">
@@ -297,13 +299,14 @@
             </div>
             <span class="row-chev" aria-hidden="true" style="margin-left: auto; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #f1eee4; color: #a3813f; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; line-height: 1;">&#8250;</span>
           </button>
-          <div style="padding: 14px 0; border-bottom: 1px solid #ece8da; display: flex; gap: 14px; align-items: center;">
+          <button type="button" class="zone-open" data-modal="grids-modal" aria-label="Watch: understanding grids" style="width: 100%; text-align: left; font: inherit; background: transparent; border: 0; border-bottom: 1px solid #ece8da; border-radius: 6px; cursor: pointer; padding: 14px 8px; margin: 0 -8px; display: flex; gap: 14px; align-items: center;">
             <img src="assets/icons/16_grid-sage.svg" alt="" style="width: 30px; height: 30px; flex-shrink: 0;">
             <div>
               <div style="font-family: 'Playfair Display', serif; font-size: 19px; color: #2f352a;">Grids</div>
               <div style="font-size: 14px; color: #6d745f; margin-top: 3px;">Footwork grids round 2 — building speed under pressure · with Ben Padel</div>
             </div>
-          </div>
+            <span class="row-chev" aria-hidden="true" style="margin-left: auto; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #f1eee4; color: #a3813f; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; line-height: 1;">&#8250;</span>
+          </button>
         </div>
       </div>
       <img src="uploads/ladies_padel_bootcamp_hero10.webp" loading="lazy" decoding="async" alt="Coach guiding a player on court" style="width: 100%; height: 100%; min-height: 280px; object-fit: cover; border-radius: 8px; display: block;">
@@ -486,6 +489,17 @@
     <p style="color: #e6e9d9; font-weight: 300; font-size: 15.5px; line-height: 1.65; margin: 14px auto 26px; max-width: 54ch;">Best-practice warm-ups and practical padel-specific injury-prevention drills — so you move well on court and walk away in one piece.</p>
     <video controls preload="none" playsinline poster="uploads/prime-your-body-poster.webp" style="width: auto; height: auto; max-width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #6d7b5b;">
       <source src="uploads/prime-your-body.mp4" type="video/mp4">
+    </video>
+  </div>
+</dialog>
+<dialog id="grids-modal" aria-labelledby="grids-title">
+  <div class="ssp-body" style="background: #7c8b68; border-radius: 10px; padding: 42px 32px 36px; text-align: center; position: relative; box-shadow: 0 30px 70px rgba(38,46,30,0.45);">
+    <button type="button" class="ssp-close" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255,255,255,0.14); color: #f4f2e9; font-size: 19px; line-height: 1; cursor: pointer;">&times;</button>
+    <div style="font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: #eec2b9; font-weight: 500;">Skill Zone</div>
+    <div id="grids-title" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #f4f2e9; margin-top: 12px; line-height: 1.2;">Understanding Grids</div>
+    <p style="color: #e6e9d9; font-weight: 300; font-size: 15.5px; line-height: 1.65; margin: 14px auto 26px; max-width: 54ch;">Grids are court zones used in training — where you move, where you recover, and where you place the ball. Here's how they work.</p>
+    <video controls preload="none" playsinline poster="uploads/grids-poster.webp" style="width: auto; height: auto; max-width: 100%; border-radius: 8px; display: block; margin: 0 auto; background: #6d7b5b;">
+      <source src="uploads/grids.mp4" type="video/mp4">
     </video>
   </div>
 </dialog>
