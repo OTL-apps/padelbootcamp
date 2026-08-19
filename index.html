@@ -44,6 +44,12 @@
   .pay-next a { color: #f4f2e9; border-bottom: 1px solid rgba(244,242,233,.5); padding-bottom: 2px; font-weight: 500; }
   .pay-next a:hover { color: #ffffff; }
   .pay-card .foot { margin-top: auto; padding-top: 12px; }
+  .pay-trust { display: flex; gap: 12px; align-items: flex-start; text-align: left;
+               background: rgba(244,242,233,0.14); border: 1px solid rgba(244,242,233,0.22);
+               border-radius: 8px; padding: 14px 16px; margin-top: 20px; }
+  .pay-trust img { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; }
+  .pay-trust p { font-size: 13.5px; line-height: 1.6; color: #eef0e4; font-weight: 300; margin: 0; }
+  .pay-trust b { font-weight: 600; color: #f8f7f0; }
   @media (max-width: 700px) {
     .pay-ways { grid-template-columns: 1fr !important; gap: 12px !important; }
     .pay-card .qr { max-width: 158px; }
@@ -485,7 +491,7 @@
           <div style="font-size: 14px; color: #6d745f; margin-top: 8px; line-height: 1.55;">Every woman here is a queen. We play. We back. We rise.</div>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid #ddd8c6; font-size: 13px; color: #8b8f7c; letter-spacing: 0.06em;">Ladies Padel Boot Camp · Hosted by Padel Boot Camps · Virgin Active Groenkloof</div>
+      <div style="text-align: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid #ddd8c6; font-size: 13px; color: #8b8f7c; letter-spacing: 0.06em;">Ladies Padel Boot Camp · Hosted by Padel Boot Camps · Virgin Active Groenkloof<br><span style="display: inline-block; margin-top: 8px;">Event management &amp; bookings by Fun&amp;Frivolity</span></div>
     </div>
   </div>
 </div>
@@ -546,10 +552,15 @@
     <div id="pay-title" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #f4f2e9; margin-top: 10px; line-height: 1.2;">R1200 &middot; Both Days</div>
     <p style="color: #e6e9d9; font-weight: 300; font-size: 15.5px; line-height: 1.6; margin: 10px auto 0; max-width: 46ch;">Three ways to pay &mdash; whichever suits you.</p>
 
+    <div class="pay-trust">
+      <img src="assets/icons/04_lock-cream.svg" alt="">
+      <p>Bookings for this boot camp are handled by <b>Fun&amp;Frivolity</b>, our event management partner. So you know it&rsquo;s the right payment: card payments appear as <b>Fun&amp;Frivolity</b> on your statement, and EFTs go to <b>B van der Merwe</b>.</p>
+    </div>
+
     <div class="pay-ways">
       <div class="pay-card pay-w-scan">
         <div class="lbl">Scan</div>
-        <div class="sub">Open your banking app and scan. Easiest from another device.</div>
+        <div class="sub">Point your phone camera at it &mdash; opens the same secure checkout. Handy if you&rsquo;re looking at this on a laptop.</div>
         <img class="qr" src="uploads/pay-qr.webp" alt="iKhokha payment QR code for the Ladies Padel Boot Camp registration fee">
       </div>
 
@@ -578,7 +589,7 @@
       <div class="n">It&rsquo;s how we match your payment to your place.</div>
     </div>
 
-    <p class="pay-next">Paid? <a href="https://forms.gle/m1YKYWrUtr9qc4rc6" target="_blank" rel="noopener">Send us your details</a> and your place is confirmed.</p>
+    <p class="pay-next">Paid? Send your details to <a href="mailto:info@onthelinewithchristie.com?subject=Padel%20Boot%20Camp%20booking&body=Hi%20Christie%2C%0A%0AI%27ve%20paid%20for%20my%20place%20at%20the%20Ladies%20Padel%20Boot%20Camp.%20My%20details%3A%0A%0AName%3A%0AWhatsApp%20number%3A%0AEmail%3A%0APlaytomic%20level%20%28if%20you%20know%20it%29%3A%0ADietary%20requirements%3A%0APaid%20by%20%28card%20/%20EFT%20/%20scan%29%3A%0A%0AThanks%21">info@onthelinewithchristie.com</a> and your place is confirmed.</p>
   </div>
 </dialog>
 <script>
